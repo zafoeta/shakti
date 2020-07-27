@@ -13,7 +13,7 @@ rmv:{[x]p:pl@*x;(mv[*x;p;*|x];(x 1),p;0 2 1@*|x)}  					/ random move and upate 
 simu::$[gover@*x;x;rmv x]  								/ move wrapper with condition on win
 cmove:{[x;y;z] 										/ cpu move
  r:{[x;y;z]simu/:(x;0;y)}[x;z]'!y; 
- m:*{[x] &x=|/x}@{[x]sum[x]%#x}'=wins[;z]'[r[;0]]!{[x]*1_x}'r[;1];
+ m:*!|<v:{[x](+/x)%#x}'wins[;z]'[r[;0]]@=r[;1][;1];
  mv[x;m;z]}
 pmove::$[gover x;x;$[gover x:mv[x;y;1];x;cmove[x;2000;2]]]    				/ player move
 show1::". ",($[x<0;$-1*x+1;" xo"x])," "
