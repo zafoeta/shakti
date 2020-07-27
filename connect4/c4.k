@@ -1,6 +1,5 @@
 nn:n,n:8 		  								/ board size
-m:(n;n)#0 	  									/ board
-lm:,m
+m:nn#0	 	  									/ board
 zz:0 0
 di:d,|''d:.[{[x]$[&/x=0;nn;x]}''(+(#'ndd)#'nd),''+ndd:nd_\nd:!n;zz;:;zz] 		/ diagonals;
 di,:d1,(!n)+'d1:{[x]$[|/n=x;nn;x]}''+'(:;(n-1)-)@'/+'d
@@ -18,7 +17,7 @@ cmove:{[x;y;z] 										/ cpu move
  mv[x;m;z]}
 pmove::$[gover x;x;$[gover x:mv[x;y;1];x;cmove[x;2000;2]]]    				/ player move
 show1::". ",($[x<0;$-1*x+1;" xo"x])," "
-show::|((,/+(9#l;,'/show1''x,'-(1+!n))),l:,32#"."),\"."
+show::|((,/+((n+1)#l;,'/show1''x,'-(1+!n))),l:,(n*4)#"."),\"."
 
 \
 to start/init/reset:
@@ -31,4 +30,3 @@ m:pmove[m;2];show m
 
 cpu against cpu:
 show@m {[x;y]$[gover x;x;cmove[x;1000;y]]}/:64#1 2
-
