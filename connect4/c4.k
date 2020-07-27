@@ -19,7 +19,7 @@ cmove:{[x;y;z] 										/ cpu move
  mv[x;m;z]}
 pmove::$[gover x;x;$[gover x:mv[x;y;1];x;cmove[x;2000;2]]]    				/ player move
 show1::". ",($[x<0;$-1*x+1;" xo"x])," "
-show::|(,/[+[(9#l;,'/show1''x,'-(1+!n))]]),l:,32#"."),\"."
+show::|(,/(+((9#l;,'/show1''x,'-(1+!n)))),l:,32#"."),\"."
 
 \
 to start/init/reset:
