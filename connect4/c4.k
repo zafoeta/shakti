@@ -1,9 +1,9 @@
-nn:n,n:8; 		  								/ board size
-m:(n;n)#0; 	  									/ board
-lm:,m;
-zz:0 0;
-di:d,|''d:.[{[x]$[&/x=0;nn;x]}''(+(#'ndd)#'nd),''+ndd:nd_\nd:!n;zz;:;zz]; 		/ diagonals;
-di,:d1,(!n)+'d1:{[x]$[|/n=x;nn;x]}''+'(:;(n-1)-)@'/+'d;
+nn:n,n:8 		  								/ board size
+m:(n;n)#0 	  									/ board
+lm:,m
+zz:0 0
+di:d,|''d:.[{[x]$[&/x=0;nn;x]}''(+(#'ndd)#'nd),''+ndd:nd_\nd:!n;zz;:;zz] 		/ diagonals;
+di,:d1,(!n)+'d1:{[x]$[|/n=x;nn;x]}''+'(:;(n-1)-)@'/+'d
 mdi::x,(+x),x@/://di									
 win::|/3<+/'(?0,&~y)^y:x=y    								/ x wins for line?
 wins::0<+/win[y]'xs@&3<sum y=+xs:mdi@x	 						/ y wins for any line?
