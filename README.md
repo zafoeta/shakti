@@ -1,0 +1,2 @@
+# shakti
+shakti script collection
