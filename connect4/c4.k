@@ -24,7 +24,7 @@ show::|((,/+((n+1)#l;,'/show1''x,'-(1+!n))),l:,(n*4)#"."),\"."				/ show board
 to start/init/reset:
 \l c4.k
 
-state: 0 - empty, 1 - red, 2 - yellow
+state: 0 - empty, 1/x - red, 2/o - yellow
 
 to play on column 3:
 play 3
