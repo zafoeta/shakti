@@ -1,7 +1,7 @@
 nn:n,n:8 		  								/ board size
 m:nn#0	 	  									/ board
 zz:0 0
-iter:1000										/ max number of iterations per simulation; increase/decrease for cpu strength/level
+iter:1000										/ number of iterations per simulation; increase/decrease strength/level
 di:d,|''d:.[{[x]$[&/x=0;nn;x]}''(+(#'ndd)#'nd),''+ndd:nd_\nd:!n;zz;:;zz] 		/ diagonals;
 di,:d1,(!n)+'d1:{[x]$[|/n=x;nn;x]}''+'(:;(n-1)-)@'/+'d
 ll::x,(+x),x@/://di									
