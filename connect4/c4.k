@@ -16,10 +16,9 @@ simu:{[x;y;z]										/ simulation
  r:{[x;y;z]simu1/:(x;0;y)}[x;z]'!y; 
  *!|<{[x](+/x)%#x}'wins'[r[;0];z]@=r[;1][;1]}
 cmove:{[x;y;z]mv[x;;z] simu[x;y;z]}							/ cpu move
-pmove::$[gover x;x;$[gover x:mv[x;y;1];x;cmove[x;iter;2]]]	   			/ player move
+play::show@m:$[gover m;m;$[gover m:mv[m;x-1;1];m;cmove[m;iter;2]]]	   		/ player move
 show1::". ",($[x<0;$-1*x;" xo"x])," "
-show::|((,/+((n+1)#l;,'/show1''x,'-(1+!n))),l:,(n*4)#"."),\"."
-play::show@m:pmove[m;x-1]
+show::|((,/+((n+1)#l;,'/show1''x,'-(1+!n))),l:,(n*4)#"."),\"."				/ show board
 
 \
 to start/init/reset:
