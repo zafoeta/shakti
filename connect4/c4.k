@@ -10,7 +10,7 @@ wins::|/win[y]'xs@&3<+/y=+xs:ll@x	 						/ y wins for any line
 mv::.[x;(y;x[y]?0);:;z]									/ move
 zeros::0<+/'0=x
 pl::*1?&zeros x										/ draw from available moves
-gover::(&/~zeros x)||/wins[x]'1 2								/ game over
+gover::(&/~zeros x)||/wins[x]'1 2							/ game over
 rmv:{[x]p:pl@*x;(mv[*x;p;*|x];(x 1),p;0 2 1@*|x)}  					/ random move and upate state
 simu1::$[gover@*x;x;rmv x]  								/ move wrapper with condition on win
 simu:{[x;y;z]										/ simulation
