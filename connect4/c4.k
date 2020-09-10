@@ -1,8 +1,6 @@
-nn:(n:7),o:6 		  								/ board size
-m:(n;o)#0	 	  								/ board
+m:(n:7;o:6)#0 		  								/ board
 iter:3000										/ number of iterations per simulation; increase/decrease strength/level
-di:d,|''d:(+{[x]x,(n-#x)#n}'(|1+nd)#'nd),''|\+nd_\:nd:!n;				/ diagonals
-di,:d1,(!n)+'d1:{[x]$[|/n=x;nn;x]}''+'(:;(n-1)-)@'/:+'d
+di:(nd,'nd)+\:/:{[x]x:x,|'1_x;x,1_-x}@+(nd:!n;0);					/ diagonals
 ll::x,(+x),x@//:/:di								 	/ game lines	
 win::|/3<+/'(?0,&~y)^y:x=y    								/ x wins for line
 wins::|//:win[y]'xs@&3<+/y=+xs:ll@x	 						/ y wins for any line
